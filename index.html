@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // storage bar gradients
+              Gradient_1: "hsl(6, 100%, 80%)",
+              Gradient_2: "hsl(335, 100%, 65%)",
+
+              // text
+              Pale_Blue: "hsl(243, 100%, 93%)",
+              Grayish_Blue: "hsl(229, 7%, 55%)",
+
+              // cards
+              Dark_Blue: "hsl(228, 56%, 26%)",
+              // icons background
+              Very_Dark_Blue: "hsl(229, 57%, 11%)",
+            },
+            fontFamily: {
+              Raleway: ["Raleway"],
+            },
+            keyframes: {
+              filled: {
+                "0%": {
+                  width: 0,
+                  opacity: 0,
+                },
+                "100%": {
+                  opacity: 1,
+                },
+              },
+            },
+            animation: {
+              filled: "filled 1s ease-in-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+      .attribution {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        color: red;
+      }
+      .attribution a {
+        color: green;
+      }
+    </style>
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen text-[14px] bg-[url('./images/bg-mobile.png')] bg-cover md:bg-[url('./images/bg-desktop.png')] md:bg-contain bg-no-repeat md:bg-bottom bg-Very_Dark_Blue font-Raleway"
+  >
+    <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-center">
+      <div
+        class="bg-Dark_Blue p-10 w-[21rem] h-[12.5rem] flex flex-col gap-9 rounded-tl-lg rounded-bl-lg rounded-br-lg rounded-tr-[120px]"
+      >
+        <img src="images/logo.svg" alt="Fylo logo" class="w-[8rem]" />
+        <div class="flex items-center gap-3">
+          <div
+            class="flex items-center justify-center p-2 rounded-lg w-11 h-11 bg-Very_Dark_Blue"
+          >
+            <img src="images/icon-document.svg" alt="document icon" />
+          </div>
+          <div
+            class="flex items-center justify-center p-2 rounded-lg w-11 h-11 bg-Very_Dark_Blue"
+          >
+            <img src="images/icon-folder.svg" alt="folder icon" />
+          </div>
+          <div
+            class="flex items-center justify-center p-2 rounded-lg w-11 h-11 bg-Very_Dark_Blue"
+          >
+            <img src="images/icon-upload.svg" alt="upload icon" />
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-Dark_Blue relative p-10 w-[21rem] h-[10.5rem] rounded-lg md:w-[30rem] md:h-[9rem]"
+      >
+        <p class="mb-3 font-normal text-center text-Grayish_Blue md:text-left">
+          You've used <span class="font-bold text-Pale_Blue">815 GB </span>of
+          your storage
+        </p>
+        <div
+          class="h-5 w-[16rem] rounded-xl p-[0.1rem] bg-Very_Dark_Blue md:w-[25rem]"
+        >
+          <div
+            class="w-[12rem] relative rounded-lg h-full bg-gradient-to-r from-Gradient_1 to-Gradient_2 animate-filled md:w-[18rem]"
+          >
+            <div
+              class="absolute top-0 bottom-0 right-[0.19rem] w-[0.6rem] h-[0.6rem] m-auto bg-white rounded-full"
+            ></div>
+          </div>
+        </div>
+        <div class="flex justify-between mt-2 font-bold text-Pale_Blue">
+          <p>0 GB</p>
+          <p>1000 GB</p>
+        </div>
+        <div
+          class="flex items-center justify-center mt-5 md:flex-row-reverse md:items-start md:justify-start md:absolute md:top-[-5rem] md:right-11"
+        >
+          <div
+            class="h-[5.2rem] relative animate-pulse bg-white w-[12rem] rounded-xl flex gap-3 items-center justify-center md:rounded-br-2xl"
+          >
+            <p class="text-5xl font-bold text-Very_Dark_Blue">185</p>
+            <p class="font-bold tracking-widest uppercase text-Grayish_Blue">
+              GB left
+            </p>
+            <div
+              class="absolute hidden w-0 h-0 border-t-[3.1rem] border-l-[2.18750rem] border-r-[4.9998px] md:block -bottom-8 -left-[-9.57rem] border-l-transparent border-r-transparent border-t-white"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Abdallah Hamada</a>.
+    </footer>
+  </body>
+</html>
